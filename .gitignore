@@ -1,0 +1,47 @@
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+
+# Precompiled Headers
+*.gch
+*.pch
+*.dep/
+*.eep
+*.lss
+*.lst
+*.map
+*.sym
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# Debug files
+*.dSYM/
+*.su
+
+# Backup Files
+*.DBK
+*.OBK
+
+# But not this file...
+!USBHIO.dll
+# Need for Compile VB6
