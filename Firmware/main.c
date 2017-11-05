@@ -68,12 +68,14 @@ int main(void){
 			if ( ch ) job_keypad( ch );
 			
 		}
-		if(B_wait2s){
-			timer[4] = 400;
-			B_wait2s = 0; //Delete future
+		if(B_wait200ms){
+			timer[4] = 40;
+			B_wait200ms = 0;
+			B_wait200msreset = 1;
 		}
-		if(timer[4] == 0){
-			
+		if(timer[4] == 0 && B_wait200msreset){
+			do_timer200ms();
+			B_wait200msreset = 0;
 		}
 	}
 	return 0;

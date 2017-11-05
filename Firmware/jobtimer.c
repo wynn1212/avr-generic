@@ -1,6 +1,6 @@
-
 void do_1s(void);
 void do_500ms(void);
+void do_timer200ms(void);
 
 void do_1s(void){
 	DISP_Str(LINE1,"Hello, World!");
@@ -17,9 +17,14 @@ void do_500ms(void){
 			DISP_Str(LINE1+14,"  ");
 		}
 		if (cmd == 2 ){
-			sb(1000);
+			lb(1000);
 			CmdOut = 1;
+			B_wait200ms = 1;
 		}
 	}
 	
+}
+
+void do_timer200ms(void){
+	cb();
 }

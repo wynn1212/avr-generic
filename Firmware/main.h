@@ -44,7 +44,8 @@ void vbmode(void);
 /* End of ¥ş°ìÅÜ¼Æ */
 
 /* Begin of bool */
-char B_wait2s = 0;
+char B_wait200ms = 0;
+char B_wait200msreset = 0;
 char B_buzzon = 0;
 /* End of bool */
 uchar key;
