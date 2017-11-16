@@ -9,20 +9,16 @@ static uchar    bytesRemaining;
  unsigned char i; 
  #define BASE 0x30
 uchar   usbFunctionRead(uchar *data, uchar len){
+	unsigned char i;
 	if(len > bytesRemaining)len = bytesRemaining;
 	if(currentAddress == 0){
-		if ( CmdOut == 1 ) {  //Recived Successful.
-			for ( i=0;i<8;i++) OUTdata[i] = 0;
-			OUTdata[0] = 99;
-			for ( i=0;i<8;i++) *(data+i) = OUTdata[i];	
-		}
+		for ( i=0;i<8;i++) *(data+i) = OUTdata[i];
    }
    currentAddress += len;
    bytesRemaining -= len;
    
    return len;
 }
-
 /* usbFunctionWrite() is called when the host sends a chunk of data to the
  * device. For more information see the documentation in usbdrv/usbdrv.h.
  * E.X. PC => Atmega8
