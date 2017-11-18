@@ -48,6 +48,7 @@ int main(void){
 	for(;;){          						/* main event loop */   
 		wdt_reset();
 		usbPoll();
+		job_usbCmd();
 		if(timer[0] ==0){					//5ms x 6 = 30ms, Áä½L±½´y®É¶¡
 			timer[0] = 6;
 			//usbPoll();

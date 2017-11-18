@@ -27,6 +27,7 @@ byte  bLCDref = 0;			//0:no refresh in need,  1:refresh required.
 const char HexData[16] = "0123456789ABCDEF";
 
 void System_init(void);
+void job_usbCmd(void);
 void sendReady_Host( void );
 void init_timer(void);
 void show_logo1(void);
