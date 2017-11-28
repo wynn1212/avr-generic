@@ -18,6 +18,7 @@ uchar bKeybusy = 0;
                       
 unsigned char online = 0;
 unsigned char cmd,CmdOut,flag_close;
+unsigned char station_no;
 uchar INdata[8];
 uchar OUTdata[8];
 uchar temp_timer[6];                  //PC
@@ -27,8 +28,6 @@ byte  bLCDref = 0;			//0:no refresh in need,  1:refresh required.
 const char HexData[16] = "0123456789ABCDEF";
 
 void System_init(void);
-void job_usbCmd(void);
-void sendReady_Host( void );
 void init_timer(void);
 void show_logo1(void);
 void show_logo2(void);

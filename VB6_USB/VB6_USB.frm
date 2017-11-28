@@ -94,11 +94,13 @@ Dim VBKEY As Integer
 Dim READY As Boolean
 Dim PowerON As Boolean
 Dim datain(10) As Byte
+Dim Station_no As Byte
 'Dim VID, PID As Integer
 Const VID = &H1234
 Const PID = &H2468
 
 Private Sub form_initialize()
+    Station_no = 255
     READY = True
     Call USBFunc("online")
 End Sub
@@ -110,7 +112,6 @@ End Sub
 Private Sub Command2_Click(Index As Integer)
     VBKEY = Index
     If VBKEY = 0 Then Call USBFunc("buzz")
-    
 End Sub
 
 
@@ -121,7 +122,7 @@ Sub USBFunc(ByVal mode As String)
         If (mode = "offline") Then
             OutDataEightByte 0, &H0, 0, 0, 0, 0, 0, 0
         ElseIf (mode = "online") Then
-            OutDataEightByte 0, &H1, 0, 0, 0, 0, 0, 0
+            OutDataEightByte 0, &H1, Station_no, 0, 0, 0, 0, 0
             PowerON = True
         ElseIf (mode = "buzz") Then
             OutDataEightByte 0, &H2, 0, 0, 0, 0, 0, 0
